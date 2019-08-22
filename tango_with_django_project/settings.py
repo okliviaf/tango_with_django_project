@@ -27,7 +27,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
-LOGIN_URL = 'rango:login'
+LOGIN_URL = 'auth_login'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'sh&1exrv&l*ih8tkynof1!baxm7oh-&yvtbov85k+cbwtxr+p#'
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [STATIC_DIR, ]
 
+REGISTRATION_OPEN = True
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = 'rango:index'
+LOGIN_URL = 'auth_login'
