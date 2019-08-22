@@ -27,6 +27,8 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
+LOGIN_URL = 'rango:login'
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'sh&1exrv&l*ih8tkynof1!baxm7oh-&yvtbov85k+cbwtxr+p#'
 
@@ -76,6 +78,11 @@ TEMPLATES = [
         },
     },
 ]
+
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+)
 
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
@@ -132,4 +139,3 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [STATIC_DIR, ]
 
-LOGIN_URL = 'rango:login'
