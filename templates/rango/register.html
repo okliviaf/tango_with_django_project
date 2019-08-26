@@ -1,4 +1,4 @@
-''' {% extends 'rango/base.html' %}
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
 
 {% block title_block %}
@@ -6,8 +6,12 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1>Register for Rango</h1>
-
+    <div class="jumbotron p-4">
+        <div class="container">
+            <h1 class="jumbotron-heading">Register for Rango</h1>
+        </div>
+    </div>
+    
     {% if registered %}
         Rango says: <strong>thank you for registering!</strong>
         <a href="{% url 'rango:index' %}">Return to the homepage.</a><br />
@@ -15,11 +19,11 @@
         Rango says: <strong>register here!</strong><br />
         <form id="user_form" method="post" action="{% url 'rango:register' %}" enctype="multipart/form-data">
             {% csrf_token %}
-
+            
             {{ user_form.as_p }}
             {{ profile_form.as_p }}
-
+            
             <input type="submit" name="submit" value="Register" />
         </form>
     {% endif %}
-{% endblock %} '''
+{% endblock %}
