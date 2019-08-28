@@ -40,3 +40,16 @@ def run_query(search_terms):
         })
 
     return results
+
+
+def main():
+    print("Bing search")
+    query_str = input("Enter a query to search for: ")
+    results = run_query(query_str)
+
+    for result in results:
+        print(result['title'])
+
+
+if __name__ == '__main__':
+    main()
