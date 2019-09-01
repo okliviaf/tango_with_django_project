@@ -35,7 +35,7 @@ SECRET_KEY = 'sh&1exrv&l*ih8tkynof1!baxm7oh-&yvtbov85k+cbwtxr+p#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['okliviaf.pythonanywhere.com']
 
 
 # Application definition
